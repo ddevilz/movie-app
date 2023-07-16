@@ -17,6 +17,7 @@ const App = () => {
   const { url } = useSelector((state) => state.home)
   const dispatch = useDispatch() 
   
+  console.log(url)
   useEffect(() => {
     fetchApiConfig()
   }, [])
@@ -32,7 +33,6 @@ const App = () => {
         }
         dispatch(getApiConfiguration(url))
       })
-
   }
   return (
     <BrowserRouter>

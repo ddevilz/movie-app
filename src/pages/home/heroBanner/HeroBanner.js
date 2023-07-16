@@ -6,18 +6,20 @@ import { useSelector } from "react-redux";
 import Img from "../../../components/lazyLoadImage/Img";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
-
 const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-  const { data, loading } = useFetch('/movie/upcoming');
-  const { url } = useSelector((state) => state.home)
+  const { data, loading } = useFetch("/movie/upcoming");
+  const { url } = useSelector((state) => state.home);
+  console.log(data)
 
   useEffect(() => {
-    const bg = url.backdrop + data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
-    setBackground(bg)
-  }, [data])
+    const bg =
+      url.backdrop +
+      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+    setBackground(bg);
+  }, [data]);
 
   const searchQueryHandler = (event) => {
     event.preventDefault();
@@ -28,9 +30,11 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-      {!loading && <div className="backdrop-img">
-        <Img src={background} />
-      </div>}
+      {!loading && (
+        <div className="backdrop-img">
+          <Img src={background} />
+        </div>
+      )}
 
       <ContentWrapper>
         <div className="wrapper">
@@ -51,7 +55,6 @@ const HeroBanner = () => {
         </div>
       </ContentWrapper>
     </div>
-
   );
 };
 
