@@ -3,6 +3,8 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch.js";
 import { useSelector } from "react-redux";
+import Img from "../../../components/lazyLoadImage/Img";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 
 const HeroBanner = () => {
@@ -26,24 +28,30 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-      <div className="backdrop-img"></div>
-      <div className="wrapper">
-        <div className="HeroBannerContent">
-          <span className="title">Welcome.</span>
-          <span className="subTitle">
-            Millions of movies, TV shows and people to discover. Explore now.
-          </span>
-          <input
-            type="text"
-            placeholder="Search for a Movie or TV show..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyUp={searchQueryHandler}
-          />
-          <button>Search</button>
+      {!loading && <div className="backdrop-img">
+        <Img src={background} />
+      </div>}
+
+      <ContentWrapper>
+        <div className="wrapper">
+          <div className="HeroBannerContent">
+            <span className="title">Welcome.</span>
+            <span className="subTitle">
+              Millions of movies, TV shows and people to discover. Explore now.
+            </span>
+            <input
+              type="text"
+              placeholder="Search for a Movie or TV show..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyUp={searchQueryHandler}
+            />
+            <button>Search</button>
+          </div>
         </div>
-      </div>
+      </ContentWrapper>
     </div>
+
   );
 };
 
