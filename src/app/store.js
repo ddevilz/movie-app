@@ -1,5 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
+import homeSlice from "../features/homeSlice";
 
 export default configureStore({
-  reducer: {}
-})
+  reducer: {
+    home: homeSlice,
+  },
+});
