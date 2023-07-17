@@ -12,7 +12,6 @@ const HeroBanner = () => {
   const navigate = useNavigate();
   const { data, loading } = useFetch("/movie/upcoming");
   const { url } = useSelector((state) => state.home);
-  console.log(data)
 
   useEffect(() => {
     const bg =
@@ -35,22 +34,24 @@ const HeroBanner = () => {
           <Img src={background} />
         </div>
       )}
-
+      <div className="opacity-layer"></div>
       <ContentWrapper>
         <div className="wrapper">
           <div className="HeroBannerContent">
             <span className="title">Welcome.</span>
-            <span className="subTitle">
+            <span className="subtitle">
               Millions of movies, TV shows and people to discover. Explore now.
             </span>
-            <input
-              type="text"
-              placeholder="Search for a Movie or TV show..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyUp={searchQueryHandler}
-            />
-            <button>Search</button>
+            <div className="searchInput">
+              <input
+                type="text"
+                placeholder="Search for a Movie or TV show..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyUp={searchQueryHandler}
+              />
+              <button>Search</button>
+            </div>
           </div>
         </div>
       </ContentWrapper>
