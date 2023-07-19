@@ -18,6 +18,7 @@ const HeroBanner = () => {
       url.backdrop +
       data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBackground(bg);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const searchQueryHandler = (event) => {
