@@ -16,8 +16,8 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location])
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const controlNavbar = () => {
     const value = window.scrollY;
@@ -73,11 +73,11 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <h1 
+        <h1
           onClick={() => {
-            navigate("/")
+            navigate("/");
             setShowSearch(false);
-          }} 
+          }}
           className="logo"
         >
           Logo
