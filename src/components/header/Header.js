@@ -67,7 +67,7 @@ const Header = () => {
     } else {
       navigate("/explore/tv");
     }
-    setMobileMenu(false);
+    setShowSearch(false);
   };
 
   return (
