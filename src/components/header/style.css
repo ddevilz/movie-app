@@ -56,7 +56,7 @@
   cursor: pointer;
 }
 
-.menuItem.searchIcon {
+.contentWrapper .menuItems .menuItem.searchIcon {
   margin-right: 0;
 }
 
