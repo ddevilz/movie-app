@@ -5,19 +5,19 @@ import useFetch from "../../../hooks/useFetch.js"
 import Carousel from '../../../components/carousel/Carousel'
 
 const Trending = () => {
-  const [endpoint, setEndpoint] = useState("day")
+  const [endpoint, setEndpoint] = useState("movie")
 
-  const {data, loading} = useFetch(`/trending/all/${endpoint}`)
+  const {data, loading} = useFetch(`/${endpoint}/popular`)
 
   const onTabChange = (tab) => {
-    setEndpoint(tab === "Day"? "day" : "week")
+    setEndpoint(tab === "Movies"? "movie" : "tv")
   } 
 
   return (
     <div className='carouselSection'>
       <ContentWrapper>
-        <span className='carouselTitle'>Trending</span>
-        <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
+        <span className='carouselTitle'>What's Popular</span>
+        <SwitchTabs data={["Movies", "Tv"]} onTabChange={onTabChange} />
       </ContentWrapper>
       <Carousel data={data?.results} loading={loading} />
     </div>
