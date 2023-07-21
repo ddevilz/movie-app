@@ -9,7 +9,7 @@ import Search from "./pages/searchResult/Search";
 import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./features/homeSlice";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
   useEffect(() => {
     fetchApiConfig();
     genresCall();
+    // eslint-disable-next-line
   }, []);
 
   const fetchApiConfig = () => {
