@@ -113,7 +113,7 @@
   transition: all 0.7s ease-in-out;
 }
 
-.detailsBanner .content .right .playbtn .traingle {
+.detailsBanner .content .right .playbtn .triangle {
   stroke-dasharray: 240;
   stroke-dashoffset: 480;
   stroke: white;
