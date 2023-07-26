@@ -1,0 +1,95 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  padding: 50px;
+  overflow: hidden;
+}
+.slide {
+  width: max-content;
+  margin-top: 50px;
+}
+.card {
+  width: 200px;
+  height: 300px;
+  background-position: 50% 50%;
+  display: inline-block;
+  transition: 0.8s;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.container .slide .card:nth-child(2) {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  box-shadow: none;
+  z-index: 1;
+}
+.card .name {
+  position: absolute;
+  bottom: 50%;
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 900;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 1 forwards;
+  text-shadow: 0 0 30px #000000;
+}
+
+.card .des {
+  position: absolute;
+  bottom: 40%;
+  display: inline-block;
+  width: 30vw;
+  color: #fff;
+}
+
+@keyframes showcontent {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+.buttons {
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  z-index: 1000;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  width: 100%;
+}
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  color: #fff;
+  border: none;
+  transition: 0.5s;
+  background-color: #592bf1;
+}
+.buttons button:hover {
+  background-color: #3f20ef;
+}

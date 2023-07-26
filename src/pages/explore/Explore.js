@@ -10,6 +10,7 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
+import HeroCarousel from "../../components/heroCarousel/HeroCarousel";
 
 let filters = {};
 
@@ -98,6 +99,7 @@ const Explore = () => {
 
   return (
     <div className="explorePage">
+    {/* <HeroCarousel /> */}
       <ContentWrapper>
         <div className="pageHeader">
           <div className="pageTitle">
@@ -129,6 +131,7 @@ const Explore = () => {
             />
           </div>
         </div>
+        
         {loading && <Spinner initial={true} />}
         {!loading && (
           <>
